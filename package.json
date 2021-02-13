@@ -1,0 +1,35 @@
+{
+  "name": "@eugle/oneui",
+  "version": "0.1.3",
+  "description": "A simple based on the react and styled-components senior style ui library",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "babel src --out-dir lib && npm publish",
+    "build": "babel src --out-dir lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugle/oneui.git"
+  },
+  "keywords": [
+    "eugle",
+    "oneui",
+    "all-in-js",
+    "css-in-js",
+    "styled-components"
+  ],
+  "author": "eugle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eugle/oneui/issues"
+  },
+  "homepage": "https://github.com/eugle/oneui#readme",
+  "dependencies": {
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}

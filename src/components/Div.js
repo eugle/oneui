@@ -30,7 +30,6 @@ import {column} from './float/column';
 import {opacity} from './basic/opacity';
 import {position} from './position';
 
-
 export const Div = styled.div`
     ${props => border(props)}
     ${props => rounded(props)}

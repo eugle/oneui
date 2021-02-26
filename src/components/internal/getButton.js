@@ -93,10 +93,6 @@ export const getButton = (props, type) => {
     if (g) {
         let gradient = `
         background-color: ${gs};
-        background-image: -webkit-linear-gradient(${g}deg, ${gs} 0%, ${ge} 100%);
-        background-image: -moz-linear-gradient(${g}deg, ${gs} 0%, ${ge} 100%);
-        background-image: -o-linear-gradient(${g}deg, ${gs} 0%, ${ge} 100%);
-        background-image: -ms-linear-gradient(${g}deg, ${gs} 0%, ${ge} 100%);
         background-image: linear-gradient(${g}deg, ${gs} 0%, ${ge} 100%);
     `;
         style += gradient

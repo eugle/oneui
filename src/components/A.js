@@ -54,7 +54,7 @@ export const A = styled.a`
     ${props => props['pw'] && media_container.phone`${`width:${props['pw']}px;`}`}
     
     ${props => props['wp'] && typeof props['wp'] === 'number' && `width:${props['wp']}%;`}
-    ${props => props['wwp'] && media_container.desktop`${`width:${props['dwp']}%;`}`}
+    ${props => props['dwp'] && media_container.desktop`${`width:${props['dwp']}%;`}`}
     ${props => props['twp'] && media_container.tablet`${`width:${props['twp']}%;`}`}
     ${props => props['pwp'] && media_container.phone`${`width:${props['pwp']}%;`}`}
   

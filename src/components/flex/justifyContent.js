@@ -2,32 +2,11 @@
  *  justify-content 布局
  *  fs,fe,c,sb,sa
  * */
+import Flex from "./flex";
+
 export const justifyContent = param => {
-    let flex = `display:flex;`;
-    let content;
-    switch (param) {
-        case 'fs':
-            content = 'flex-start';
-            break;
-        case 'fe':
-            content = 'flex-end';
-            break;
-        case 'c':
-            content = 'center';
-            break;
-        case 'sb':
-            content = 'space-between';
-            break;
-        case 'sa':
-            content = 'space-around';
-            break;
-        default:
-            content = 'flex-start';
-            break;
-    }
-    const value = `-webkit-justify-content:${content};
-                            -webkit-justify-content:${content};
-                            -ms-justify-content:${content};
-                            justify-content:${content};`;
+    const flex = `display:flex;`;
+    const value = `justify-content:${Flex[param]};`;
+
     return typeof param === 'string' ? flex + value : flex;
 };

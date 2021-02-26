@@ -5,33 +5,36 @@
  * 平板:tm,tmt,tmr,tmb,tml,
  * 手机：pm,pmt,pmr,pmb,pml
  * */
-export const margin = ({m, mt, mr, mb, ml, dm, dmt, dmr, dmb, dml, tm, tmt, tmr, tmb, tml, pm, pmt, pmr, pmb, pml}) => {
+export const margin = (props) => {
+    const {m, mt, mr, mb, ml, dm, dmt, dmr, dmb, dml, tm, tmt, tmr, tmb, tml, pm, pmt, pmr, pmb, pml} = props;
+    const mx = {t: 'top', r: 'right', b: 'bottom', l: 'left'};
     let combination = '';
     if (dm || dmt || dmr || dmb || dml || dm === 0 || dmt === 0 || dmr === 0 || dmb === 0 || dml === 0) {
         let css = '';
         if (dm) {
-            if (typeof dm === 'number' || dm === 0) {
+            if (dm || dm === 0) {
                 css = `margin:${dm}px;`;
             }
-            if (typeof dm === 'object' && dm && dm.length === 4) {
-                css = `margin-top:${dm[0]}px;margin-right:${dm[1]}px;margin-bottom:${dm[2]}px;margin-left:${dm[3]}px;`;
+            if (dm.length === 4) {
+                Object.values(mx).forEach((item,index) => css += `margin-${item}:${dm[index]}px;`)
             }
         } else {
-            if (typeof dmt === 'number' && (dmt || dmt === 0)) {
+            if (dmt || dmt === 0) {
                 css += `margin-top:${dmt}px;`;
             }
-            if (typeof dmr === 'number' && (dmr || dmr === 0)) {
+            if (dmr || dmr === 0) {
                 css += `margin-right:${dmr}px;`;
             }
-            if (typeof dmb === 'number' && (dmb || dmb === 0)) {
+            if (dmb || dmb === 0) {
                 css += `margin-bottom:${dmb}px;`;
             }
-            if (typeof dml === 'number' && (dml || dml === 0)) {
+            if (dml || dml === 0) {
                 css += `margin-left:${dml}px;`;
             }
         }
         combination += `@media (max-width: 1199px){${css}}`;
     }
+
     if (tm || tmt || tmr || tmb || tml || tm === 0 || tmt === 0 || tmr === 0 || tmb === 0 || tml === 0) {
         let css = '';
         if (tm) {

@@ -3,8 +3,7 @@
  * @param: column, 1~10
  * */
 export const column = ({col}) => {
-    const current = Number(col - 1);
-    if (current >= 0) {
+    if (col && Number(col)) {
         const percentage = [
             8.33333333,
             16.66666667,
@@ -19,6 +18,6 @@ export const column = ({col}) => {
             91.66666667,
             100
         ];
-        return `width:${percentage[current]}%;`;
+        return `width:${percentage[col-1]}%;`;
     }
 };

@@ -10,5 +10,7 @@ export const getGradient = bg => {
             Object.keys(color).includes(bg) ? Color[bg] : bg,
             Object.keys(color).includes(bg) ? Color[bg + 'G'] : bg + 'G'
         ];
+    }else{
+        return [];
     }
 };

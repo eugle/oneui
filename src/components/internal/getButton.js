@@ -61,8 +61,6 @@ export const getButton = (props, type) => {
         }
     }
 
-    const [gs, ge] = getGradient(bg);
-
     let textColor = Color.f6;
     if (c) {
         textColor = color;
@@ -91,6 +89,7 @@ export const getButton = (props, type) => {
         style += `text-align: center; touch-action: manipulation;-webkit-appearance: button;`
     }
     if (g) {
+        const [gs, ge] = getGradient(bg);
         let gradient = `
         background-color: ${gs};
         background-image: linear-gradient(${g}deg, ${gs} 0%, ${ge} 100%);

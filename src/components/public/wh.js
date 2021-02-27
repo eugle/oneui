@@ -1,4 +1,4 @@
-import {media_container} from '../media/media_container';
+import {sizes} from '../media/media_container';
 
 export default props => {
     const arr = ['w', 'h'];
@@ -13,22 +13,13 @@ export default props => {
                 if (item.length === 1 || arr.slice(0, 4).includes(item)) {
                     css += `${[tag[[...item].shift()]]}:${props[item]}${item.length === 1 ? 'px' : '%'};`;
                 }
-                if (item.length === 2 && !arr.slice(0, 4).includes(item)) {
-                    console.log(scr[[...item].shift()]);
-                    console.log(tag[[...item].pop()]);
-                    console.log(props[item]);
-                    css += media_container[scr[[...item].shift()]]`${[tag[[...item].pop()]]}:${props[item]}px;`
-                }
-                if (item.length === 3) {
-                    console.log(scr[[...item].shift()]);
-                    console.log(tag[[...item][1]]);
-                    console.log(props[item]);
-                    css += media_container[scr[[...item].shift()]]`${[tag[[...item][1]]]}:${props[item]}%;`;
-                    console.log(css);
+                if (item.length >= 2 && !arr.slice(0, 4).includes(item)) {
+                    css += `@media (max-width: ${sizes[scr[[...item].shift()]]}px){
+                        ${tag[[...item][1]]}:${props[item]}${item.length === 2 ? 'px' : '%'};
+                    }`;
                 }
             }
         }
     });
-    console.log(css);
     return css;
 }

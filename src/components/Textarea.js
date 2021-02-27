@@ -10,27 +10,9 @@ import {margin} from "./box/margin";
 import {media} from "./media/media";
 import {opacity} from "./basic/opacity";
 import {getButton} from "./internal/getButton";
+import wh from './public/wh';
 
 export const Textarea = styled.textarea`
-    ${props => props['w'] && typeof props['w'] === 'number' && `width:${props['w']}px;`}
-    ${props => props['dw'] && media_container.desktop`${`width:${props['dw']}px;`}`}
-    ${props => props['tw'] && media_container.tablet`${`width:${props['tw']}px;`}`}
-    ${props => props['pw'] && media_container.phone`${`width:${props['pw']}px;`}`}
-    
-    ${props => props['wp'] && typeof props['wp'] === 'number' && `width:${props['wp']}%;`}
-    ${props => props['wwp'] && media_container.desktop`${`width:${props['dwp']}%;`}`}
-    ${props => props['twp'] && media_container.tablet`${`width:${props['twp']}%;`}`}
-    ${props => props['pwp'] && media_container.phone`${`width:${props['pwp']}%;`}`}
-  
-    ${props => props['h'] && typeof props['h'] === 'number' && `height:${props['h']}px;`}
-    ${props => props['dh'] && media_container.desktop`${`height:${props['dh']}px;`}`}
-    ${props => props['th'] && media_container.tablet`${`height:${props['th']}px;`}`}
-    ${props => props['ph'] && media_container.phone`${`height:${props['ph']}px;`}`}
-    
-    ${props => props['hp'] && typeof props['hp'] === 'number' && `height:${props['hp']}%;`}
-    ${props => props['dhp'] && media_container.desktop`${`height:${props['dhp']}%;`}`}
-    ${props => props['thp'] && media_container.tablet`${`height:${props['thp']}%;`}`}
-    ${props => props['php'] && media_container.phone`${`height:${props['php']}%;`}`}
     ${props => props['br'] && typeof props['br'] === 'number' && `border-radius:${props['br']}px;`}
     ${props => props['a'] && typeof props['a'] === 'boolean' && `width:100%;`}
     ${props => props['fs'] && typeof props['fs'] === 'number' && `font-size:${props['fs']}px;`}
@@ -40,6 +22,7 @@ export const Textarea = styled.textarea`
     ${props => props['mpfs'] && media_container.miniPhone`${`font-size:${props['pfs']}px;`}`}
 	${props => props['ro'] && `rows:${props['ro']};`}
    
+    ${props => wh(props)}
     ${props => border(props)}
     ${props => margin(props)}
     ${props => getButton(props, 'input')}

@@ -19,8 +19,10 @@ import {margin} from "./box/margin";
 import {media} from "./media/media";
 import {opacity} from "./basic/opacity";
 import {column} from "./float/column";
+import wh from './public/wh';
 
 export const A = styled.a`
+    ${props => wh(props)}
     ${props => props['fd'] && flexDirection(props['fd'])}
     ${props => props['dfd'] && media_container.desktop`${flexDirection(props['dfd'])}`}
     ${props => props['tfd'] && media_container.tablet`${flexDirection(props['tfd'])}`}
@@ -42,32 +44,13 @@ export const A = styled.a`
     ${props => props['pai'] && media_container.phone`${alignItems(props['pai'])}`}
     ${props => props['ac'] && alignContent(props['ac'])}
     ${props => props['as'] && alignSelf(props['as'])}
+    
     ${props => props['f'] && typeof props['f'] === 'number' && `flex:${props['f']};`}
     ${props => props['df'] && media_container.desktop`${flexDirection(props['df'])}`}
     ${props => props['tf'] && media_container.tablet`${flexDirection(props['tf'])}`}
     ${props => props['pf'] && media_container.phone`${flexDirection(props['pf'])}`}
     ${props => props['_o'] && typeof props['_o'] === 'number' && `order:${props['_o']};`}
-    
-    ${props => props['w'] && typeof props['w'] === 'number' && `width:${props['w']}px;`}
-    ${props => props['dw'] && media_container.desktop`${`width:${props['dw']}px;`}`}
-    ${props => props['tw'] && media_container.tablet`${`width:${props['tw']}px;`}`}
-    ${props => props['pw'] && media_container.phone`${`width:${props['pw']}px;`}`}
-    
-    ${props => props['wp'] && typeof props['wp'] === 'number' && `width:${props['wp']}%;`}
-    ${props => props['dwp'] && media_container.desktop`${`width:${props['dwp']}%;`}`}
-    ${props => props['twp'] && media_container.tablet`${`width:${props['twp']}%;`}`}
-    ${props => props['pwp'] && media_container.phone`${`width:${props['pwp']}%;`}`}
-  
-    ${props => props['h'] && typeof props['h'] === 'number' && `height:${props['h']}px;`}
-    ${props => props['dh'] && media_container.desktop`${`height:${props['dh']}px;`}`}
-    ${props => props['th'] && media_container.tablet`${`height:${props['th']}px;`}`}
-    ${props => props['ph'] && media_container.phone`${`height:${props['ph']}px;`}`}
-    
-    ${props => props['hp'] && typeof props['hp'] === 'number' && `height:${props['hp']}%;`}
-    ${props => props['dhp'] && media_container.desktop`${`height:${props['dhp']}%;`}`}
-    ${props => props['thp'] && media_container.tablet`${`height:${props['thp']}%;`}`}
-    ${props => props['php'] && media_container.phone`${`height:${props['php']}%;`}`}
-
+   
     ${props =>
     props['bg'] && typeof props['bg'] === 'string' && props['g']
         ? setBackground(props['bg'], props['g'])

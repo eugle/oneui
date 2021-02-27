@@ -85,6 +85,7 @@ export const A = styled.a`
     ${props => props['tlh'] && media_container.tablet`${`line-height:${props['tlh']}px;`}`}
     ${props => props['plh'] && media_container.phone`${`line-height:${props['plh']}px;`}`}
     ${props => border(props)}
+    ${props => border(props)}
     ${props => padding(props)}
     ${props => margin(props)}
     ${props => media(props)}

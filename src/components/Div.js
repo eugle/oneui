@@ -29,8 +29,10 @@ import {rounded} from './advance/rounded';
 import {column} from './float/column';
 import {opacity} from './basic/opacity';
 import {position} from './position';
+import wh from './public/wh';
 
 export const Div = styled.div`
+    ${props => wh(props)}
     ${props => border(props)}
     ${props => rounded(props)}
     ${props => padding(props)}
@@ -72,27 +74,6 @@ export const Div = styled.div`
     ${props => props['_to'] && media_container.tablet`${`order:${props['_to']};`}`}
     ${props => props['_po'] && media_container.phone`${`order:${props['_po']};`}`}
 
-   
-    ${props => props['w'] && typeof props['w'] === 'number' && `width:${props['w']}px;`}
-    ${props => props['dw'] && media_container.desktop`${`width:${props['dw']}px;`}`}
-    ${props => props['tw'] && media_container.tablet`${`width:${props['tw']}px;`}`}
-    ${props => props['pw'] && media_container.phone`${`width:${props['pw']}px;`}`}
-    
-    ${props => props['wp'] && typeof props['wp'] === 'number' && `width:${props['wp']}%;`}
-    ${props => props['dwp'] && media_container.desktop`${`width:${props['dwp']}%;`}`}
-    ${props => props['twp'] && media_container.tablet`${`width:${props['twp']}%;`}`}
-    ${props => props['pwp'] && media_container.phone`${`width:${props['pwp']}%;`}`}
-  
-    ${props => props['h'] && typeof props['h'] === 'number' && `height:${props['h']}px;`}
-    ${props => props['dh'] && media_container.desktop`${`height:${props['dh']}px;`}`}
-    ${props => props['th'] && media_container.tablet`${`height:${props['th']}px;`}`}
-    ${props => props['ph'] && media_container.phone`${`height:${props['ph']}px;`}`}
-    
-    ${props => props['hp'] && typeof props['hp'] === 'number' && `height:${props['hp']}%;`}
-    ${props => props['dhp'] && media_container.desktop`${`height:${props['dhp']}%;`}`}
-    ${props => props['thp'] && media_container.tablet`${`height:${props['thp']}%;`}`}
-    ${props => props['php'] && media_container.phone`${`height:${props['php']}%;`}`}
-    
     ${props => props['c'] && `color:${getColor(props['c'], props['o'])};`}
     ${props => props['fs'] && typeof props['fs'] === 'number' && `font-size:${props['fs']}px;`}
     ${props => props['dfs'] && media_container.desktop`${`font-size:${props['dfs']}px;`}`}

@@ -27,5 +27,6 @@ export const Textarea = styled.textarea`
     ${props => margin(props)}
     ${props => getButton(props, 'input')}
     ${props => media(props)}
-     ${props => opacity(props)}
+    ${props => opacity(props)}
+    word-wrap:break-word;
 `;

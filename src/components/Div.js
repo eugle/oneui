@@ -29,6 +29,7 @@ import {rounded} from './advance/rounded';
 import {column} from './float/column';
 import {opacity} from './basic/opacity';
 import {position} from './position';
+import {animate} from './animate';
 import wh from './public/wh';
 
 export const Div = styled.div`
@@ -40,6 +41,7 @@ export const Div = styled.div`
     ${props => media(props)}
     ${props => opacity(props)}
     ${props => position(props)}
+    ${props => animate(props)}
     
     ${props => props['fd'] && flexDirection(props['fd'])}
     ${props => props['dfd'] && media_container.desktop`${flexDirection(props['dfd'])}`}

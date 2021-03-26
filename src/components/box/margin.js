@@ -11,7 +11,7 @@ export const margin = (props) => {
     let combination = '';
     if (dm || dmt || dmr || dmb || dml || dm === 0 || dmt === 0 || dmr === 0 || dmb === 0 || dml === 0) {
         let css = '';
-        if (dm) {
+        if (dm || dm === 0) {
             if (dm || dm === 0) {
                 css = `margin:${dm}px;`;
             }
@@ -37,7 +37,7 @@ export const margin = (props) => {
 
     if (tm || tmt || tmr || tmb || tml || tm === 0 || tmt === 0 || tmr === 0 || tmb === 0 || tml === 0) {
         let css = '';
-        if (tm) {
+        if (tm || tm === 0) {
             if (typeof tm === 'number' || tm === 0) {
                 css = `margin:${tm}px;`;
             }
@@ -62,7 +62,7 @@ export const margin = (props) => {
     }
     if (pm || pmt || pmr || pmb || pml || pm === 0 || pmt === 0 || pmr === 0 || pmb === 0 || pml === 0) {
         let css = '';
-        if (pm) {
+        if (pm || pm === 0) {
             if (typeof pm === 'number' || pm === 0) {
                 css = `margin:${pm}px;`;
             }
@@ -87,7 +87,7 @@ export const margin = (props) => {
     }
     if (m || mt || mr || mb || ml || m === 0 || mt === 0 || mr === 0 || mb === 0 || ml === 0) {
         let margin = '';
-        if (m) {
+        if (m || m === 0) {
             if (typeof m === 'number' || m === 0) {
                 margin = `margin:${m}px;`;
             }

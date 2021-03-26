@@ -10,7 +10,7 @@ export const padding = ({p, pt, pr, pb, pl, dp, dpt, dpr, dpb, dpl, tp, tpt, tpr
     if (p || pt || pr || pb || pl || p === 0 || pt === 0 || pr === 0 || pb === 0 || pl === 0) {
         let padding = '';
 
-        if (p) {
+        if (p || p === 0) {
             if (typeof p === 'number' || p === 0) {
                 padding = `padding:${p}px;`;
             }
@@ -36,7 +36,7 @@ export const padding = ({p, pt, pr, pb, pl, dp, dpt, dpr, dpb, dpl, tp, tpt, tpr
 
     if (dp || dpt || dpr || dpb || dpl || dp === 0 || dpt === 0 || dpr === 0 || dpb === 0 || dpl === 0) {
         let css = '';
-        if (dp) {
+        if (dp || dp === 0) {
             if (typeof dp === 'number' || dp === 0) {
                 css = `padding:${dp}px;`;
             }
@@ -62,7 +62,7 @@ export const padding = ({p, pt, pr, pb, pl, dp, dpt, dpr, dpb, dpl, tp, tpt, tpr
 
     if (tp || tpt || tpr || tpb || tpl || tp === 0 || tpt === 0 || tpr === 0 || tpb === 0 || tpl === 0) {
         let css = '';
-        if (tp) {
+        if (tp || tp === 0) {
             if (typeof tp === 'number' || tp === 0) {
                 css = `padding:${tp}px;`;
             }
@@ -88,7 +88,7 @@ export const padding = ({p, pt, pr, pb, pl, dp, dpt, dpr, dpb, dpl, tp, tpt, tpr
 
     if (pp || ppt || ppr || ppb || ppl || pp === 0 || ppt === 0 || ppr === 0 || ppb === 0 || ppl === 0) {
         let css = '';
-        if (pp) {
+        if (pp || pp === 0) {
             if (typeof pp === 'number' || pp === 0) {
                 css = `padding:${pp}px;`;
             }

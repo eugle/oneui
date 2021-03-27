@@ -27,13 +27,10 @@ export const Button = styled.button`
     :hover {
     	transition: all 0.5s;
         background: ${props => (props['bg'] ? getColor(props['bg'], props['bgo'], true) : '#fff;')}
-        ${props =>
-    (props['bgo'] || props['bgo'] === 0) && `
-            border:${props.b ? props.b[0] : `1`}px ${props.b && props.b[1] && props.b[1] === 'd' ? `dashed` : `solid`} ${getColor(
+        ${props => (props['bgo'] || props['bgo'] === 0) && `border:${props.b ? props.b[0] : `1`}px ${props.b && props.b[1] && props.b[1] === 'd' ? `dashed` : `solid`} ${getColor(
     props.b ? props.b[2] : props['bg'] || '#ccc',
     null,
-    1
-    )}
+    1)}
             color:${getColor(props.b ? props.b[2] : props['bgo'] === 0 ? props['bg'] : '', null, 1)}
         `}
     }
@@ -98,8 +95,7 @@ export const Button = styled.button`
     ${props => props['cp'] && typeof props['cp'] === 'boolean' && `cursor:pointer;`}
     ${props => props['cd'] && typeof props['cd'] === 'boolean' && `cursor:default;`}
     ${props =>
-    props['bs'] &&
-    typeof props['bs'] === 'object' &&
+    props['bs'] && typeof props['bs'] === 'object' &&
     `box-shadow:${props['bs'][0]}px ${props['bs'][1]}px ${props['bs'][2]}px rgba(0,0,0,${props['bs'][3]});`} 
         
     ${props => props['i'] && buttonIcon()}

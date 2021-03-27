@@ -52,7 +52,7 @@ export const A = styled.a`
     ${props => props['_o'] && typeof props['_o'] === 'number' && `order:${props['_o']};`}
    
     ${props =>
-    props['bg'] && typeof props['bg'] === 'string' && props['g']
+    props['bg'] && (typeof props['bg'] === 'string' && props['g'])
         ? setBackground(props['bg'], props['g'])
         : `background:${getColor(props['bg'], props['bgo'])};`}
     ${props => props['br'] && typeof props['br'] === 'number' && `border-radius:${props['br']}px;`}

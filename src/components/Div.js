@@ -91,16 +91,10 @@ export const Div = styled.div`
     ${props => props['l'] && typeof props['l'] === 'boolean' && `font-weight:300;`}
     ${props => props['b'] && typeof props['b'] === 'boolean' && `font-weight:600;`}
         
-    ${props =>
-    props['bg'] && typeof props['bg'] === 'string' && (props['g']
-    ? setBackground(props['bg'], props['g'])
-    : `background:${getColor(props['bg'], props['bgo'])};`)}
-    ${props =>
-    props['dbg'] && media_container.desktop`${props['g'] ? setBackground(props['dbg'], props['g']) : `background:${getColor(props['dbg'], props['dbgo'])};`}`}
-    ${props =>
-    props['tbg'] && media_container.tablet`${props['g'] ? setBackground(props['tbg'], props['g']) : `background:${getColor(props['tbg'], props['tbgo'])};`}`}
-    ${props =>
-    props['pbg'] && media_container.phone`${props['g'] ? setBackground(props['pbg'], props['g']) : `background:${getColor(props['pbg'], props['pbgo'])};`}`}
+    ${props => props['bg'] && (typeof props['bg'] === 'string' && (props['g']) ? setBackground(props['bg'], props['g']) : `background:${getColor(props['bg'], props['bgo'])};`)}
+    ${props => props['dbg'] && media_container.desktop`${props['g'] ? setBackground(props['dbg'], props['g']) : `background:${getColor(props['dbg'], props['dbgo'])};`}`}
+    ${props => props['tbg'] && media_container.tablet`${props['g'] ? setBackground(props['tbg'], props['g']) : `background:${getColor(props['tbg'], props['tbgo'])};`}`}
+    ${props => props['pbg'] && media_container.phone`${props['g'] ? setBackground(props['pbg'], props['g']) : `background:${getColor(props['pbg'], props['pbgo'])};`}`}
     
     ${props => props['br'] && typeof props['br'] === 'number' && `border-radius:${props['br']}px;`}
      

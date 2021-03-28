@@ -1,22 +1,22 @@
 import {DefaultColor as Color} from "../styles/color";
 
 export const GlobalColor = ({
-                                primary,
-                                primaryRGB,
-                                primaryG,
-                                success,
-                                successRGB,
-                                successG,
-                                danger,
-                                dangerRGB,
-                                dangerG,
-                                warning,
-                                warningRGB,
-                                warningG,
-                                info,
-                                infoRGB,
-                                infoG,
-                            } = {}) => {
+        primary,
+        primaryRGB,
+        primaryG,
+        success,
+        successRGB,
+        successG,
+        danger,
+        dangerRGB,
+        dangerG,
+        warning,
+        warningRGB,
+        warningG,
+        info,
+        infoRGB,
+        infoG,
+    } = {}) => {
     if (primary) {
         Color.primary = primary;
     }

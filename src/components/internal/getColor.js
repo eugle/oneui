@@ -26,16 +26,15 @@ export const getColor = (c, o, over) => {
     }
 
     //如果同时给了颜色和透明度 [bg,bgo]
-    if (c instanceof Array && c.length) {
-        const [cc, co = 1] = c;
+    if (c instanceof Array && c.length >= 1) {
+        const [cc, co] = c;
         //如果背景是默认单或双数值颜色，判断并组合
-        if (cc.length <= 2 && Object.keys(Color).includes(cc)) {
-            currentColor = `rgba(${Color[`${cc}RGB`]},${co})`
+        if (Object.keys(Color).includes(cc)) {
+            currentColor = `rgba(${Color[`${cc}RGB`]},${co || 1})`
         }
-
         //如果是rgba色
         if (String(cc).includes(',') && !String(cc).includes('rgba')) {
-            currentColor = `rgba(${cc},${co})`;
+            currentColor = `rgba(${cc},${co || 1})`;
         }
 
         //如果是#十六进制色
@@ -44,5 +43,5 @@ export const getColor = (c, o, over) => {
         }
     }
 
-    return currentColor;
+    return currentColor || '';
 };

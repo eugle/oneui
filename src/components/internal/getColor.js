@@ -21,15 +21,13 @@ export const getColor = (c, o, over) => {
     }
 
     //如果是默认单或双数值颜色，判断并组合;
-    if (c && c.length <= 2) {
-        const current = Object.keys(Color).includes(c) ? Color[c] : c;
-        currentColor = o || o === 0 ? `rgba(${Color[`${current}RGB`]},${opacity})` : over ? Color[`${current}G`] : Color[current];
+    if (c && c.length <= 2 && Object.keys(Color).includes(c)) {
+        currentColor = o || o === 0 ? `rgba(${Color[`${c}RGB`]},${opacity})` : over ? Color[`${c}G`] : Color[c];
     }
-    console.log('颜色参数: ', c);
+
     //如果同时给了颜色和透明度 [bg,bgo]
-    if (c instanceof Array && c.length === 2) {
-        console.log('开始转化: ', c);
-        const [cc, co] = c;
+    if (c instanceof Array && c.length) {
+        const [cc, co = 1] = c;
         //如果背景是默认单或双数值颜色，判断并组合
         if (cc.length <= 2 && Object.keys(Color).includes(cc)) {
             currentColor = `rgba(${Color[`${cc}RGB`]},${co})`

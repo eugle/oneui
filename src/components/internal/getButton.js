@@ -29,26 +29,26 @@ export const getButton = (props, type) => {
     const background = bgo === 0 || singer === 0 && !bg ? 'rgba(255,255,255,0)' : getColor(bg, bgo);
     const color = getColor(c, co);
 
-    let padding = '6px 15px',
+    let padding = type === 'button' ? '6px 15px' : (r ? "6px 15px" : "6px"),
         border = `1px solid ${Color.fc};`,
         fontSize = fs || pfs || 12,
         borderRadius = type === 'button' ? '3px' : '0',
         lineHeight = '1.42857143';
 
     if (xs) {
-        padding = '1px 12px';
+        padding = type === 'button' ? '1px 12px' : (r ? "1px 12px" : "4px");
         lineHeight = i ? '1.4' : '1.6';
     }
     if (s) {
-        padding = '5px 15px';
+        padding = type === 'button' ? '5px 15px' : (r ? "5px 15px" : "6px");
         lineHeight = '1.5';
     }
     if (l) {
-        padding = '8px 18px';
+        padding = type === 'button' ? '8px 18px' : (r ? "8px 18px" : "8px");
         lineHeight = '1.33333';
     }
     if (xl) {
-        padding = '12px 24px';
+        padding = type === 'button' ? '12px 24px' : ( r ? "12px 24px" : "10px" );
         lineHeight = '1.33333';
         fontSize = fs || pfs || 14;
     }

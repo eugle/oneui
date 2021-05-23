@@ -1,7 +1,7 @@
 {
   "name": "@eugle/oneui",
   "description": "A simple based on the react and styled-components senior style ui library",
-  "version": "0.3.17",
+  "version": "0.3.18",
   "license": "MIT",
   "scripts": {
     "setup": "yarn install && cd docs && yarn install",
@@ -57,11 +57,11 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.2.1",
     "react-scripts": "3.4.0",
     "rollup": "^1.31.1",
     "rollup-plugin-peer-deps-external": "^2.2.2",
     "rollup-plugin-postcss": "2.0.6",
+    "styled-components": "^5.2.1",
     "terser": "4.6.3",
     "tslib": "^1.10.0",
     "typescript": "^3.7.5",

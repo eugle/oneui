@@ -12,7 +12,7 @@ export const setColor = ({c, b, bg}) => {
         color = 'rgba(255,255,255,.5)';
     }
     if (c) {
-        color = getColor(c, 5);
+        color = getColor(c, 2);
     }
     return color;
 };

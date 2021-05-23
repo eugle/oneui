@@ -4,22 +4,22 @@
  * 全宽 a
  * */
 import styled from "styled-components";
-import { getColor } from "./internal/getColor";
-import { getRGB } from "./internal/getRGB";
-import { border } from "./box/border";
-import { margin } from "./box/margin";
-import { media } from "./media/media";
-import { opacity } from "./basic/opacity";
-import { flexDirection } from "./flex/flexDirection";
-import { media_container } from "./media/media_container";
-import { flexWrap } from "./flex/flexWrap";
-import { justifyContent } from "./flex/justifyContent";
-import { alignItems } from "./flex/alignItems";
-import { alignContent } from "./flex/alignContent";
-import { alignSelf } from "./flex/alignSelf";
-import { column } from "./float/column";
-import { getButton } from "./internal/getButton";
-import { buttonIcon } from "./internal/buttonIcon";
+import {getColor} from "./internal/getColor";
+import {getRGB} from "./internal/getRGB";
+import {border} from "./box/border";
+import {margin} from "./box/margin";
+import {media} from "./media/media";
+import {opacity} from "./basic/opacity";
+import {flexDirection} from "./flex/flexDirection";
+import {media_container} from "./media/media_container";
+import {flexWrap} from "./flex/flexWrap";
+import {justifyContent} from "./flex/justifyContent";
+import {alignItems} from "./flex/alignItems";
+import {alignContent} from "./flex/alignContent";
+import {alignSelf} from "./flex/alignSelf";
+import {column} from "./float/column";
+import {getButton} from "./internal/getButton";
+import {buttonIcon} from "./internal/buttonIcon";
 
 export const Button = styled.button`
 	transition: all 0.5s;
@@ -29,9 +29,9 @@ export const Button = styled.button`
     	transition: all 0.5s;
         background: ${props => (props["bg"] ? getColor(props["bg"], props["bgo"], true) : "#fff;")}
         ${props => (props["bgo"] || props["bgo"] === 0) && `border:${props.b ? props.b[0] : `1`}px ${props.b && props.b[1] && props.b[1] === "d" ? `dashed` : `solid`} ${getColor(
-  props.b ? props.b[2] : props["bg"] || "#ccc",
-  null,
-  1)}
+    props.b ? props.b[2] : props["bg"] || "#ccc",
+    null,
+    1)}
             color:${getColor(props.b ? props.b[2] : props["bgo"] === 0 ? props["bg"] : "", null, 1)}
         `}
     }
@@ -96,17 +96,17 @@ export const Button = styled.button`
     ${props => props["cp"] && typeof props["cp"] === "boolean" && `cursor:pointer;`}
     ${props => props["cd"] && typeof props["cd"] === "boolean" && `cursor:default;`}
     ${props => props["bs"] && typeof props["bs"] === "object" &&
-  `box-shadow:${props["bs"][0]}px ${props["bs"][1]}px ${props["bs"][2]}px rgba(${getRGB(props["bs"][4])},${props["bs"][3]});`} 
+    `box-shadow:${props["bs"][0]}px ${props["bs"][1]}px ${props["bs"][2]}px rgba(${getRGB(props["bs"][4])},${props["bs"][3]});`} 
         
     ${props => props["i"] && buttonIcon()}
     ${props =>
-  props["ch"] &&
-  `
+    props["ch"] &&
+    `
         :hover{transition: all 0.5s;color:${getColor(props["ch"], props["cho"], true)};}
     `} 
     ${props =>
-  props["bh"] &&
-  `
+    props["bh"] &&
+    `
         :hover{transition: all 0.5s;background:${getColor(props["bh"], props["bho"])};}
     `} 
     

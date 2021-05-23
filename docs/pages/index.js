@@ -1,12 +1,12 @@
-import React from "react";
-import Head from "next/head";
+import React, {Component} from "react";
 import {Div} from '@eugle/oneui'
 
-export default function Home() {
-
-  return (
-    <Div>
-      hello
-    </Div>
-  );
+export default class Home extends Component {
+    render() {
+        return (
+            <Div>
+                hello
+            </Div>
+        );
+    }
 }

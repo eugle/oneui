@@ -20,6 +20,7 @@ import {alignSelf} from "./flex/alignSelf";
 import {column} from "./float/column";
 import {getButton} from "./internal/getButton";
 import {buttonIcon} from "./internal/buttonIcon";
+import wh from './public/wh';
 
 export const Button = styled.button`
 	transition: all 0.5s;
@@ -36,6 +37,7 @@ export const Button = styled.button`
         `}
     }
     
+    ${props => wh(props)}
     ${props => border(props)}
     ${props => margin(props)}
     ${props => getButton(props, "button")}
@@ -69,8 +71,6 @@ export const Button = styled.button`
     ${props => props["pf"] && media_container.phone`${flexDirection(props["pf"])}`}
     ${props => props["_o"] && typeof props["_o"] === "number" && `order:${props["_o"]};`}
 
-    ${props => props["w"] && typeof props["w"] === "number" && `width:${props["w"]}px;`}
-    ${props => props["h"] && typeof props["h"] === "number" && `height:${props["h"]}px;`}
     ${props => props["br"] && typeof props["br"] === "number" && `border-radius:${props["br"]}px;`}
     ${props => props["a"] && typeof props["a"] === "boolean" && `width:100%;`}
    

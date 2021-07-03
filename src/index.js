@@ -5,6 +5,7 @@
 export {DefaultColor} from './styles/color';
 export {GlobalStyle} from './components/internal/global';
 export {GlobalColor} from './components/GlobalColor';
+export {GlobalButton} from './components/GlobalButton';
 
 export {Div} from './components/Div';
 export {Img} from './components/Img';

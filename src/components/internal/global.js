@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         i{font-style:inherit;}
         img,input{vertical-align:middle;}
         table{border-collapse:collapse;border-spacing:0;}
-        address, caption, cite, code, dfn, em, strong, th, var{font-style:normal;font-weight:normal;}
+        address, caption, cite, code, dfn, em, th, var{font-style:normal;font-weight:normal;}
         caption, th{text-align:left;}
         q:before, q:after{content:'';}
         input,button,select,textarea{outline:none;box-sizing:border-box;}

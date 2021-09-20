@@ -12,24 +12,24 @@
  * */
 
 import styled from 'styled-components';
-import {media_container} from './media/media_container';
-import {media} from './media/media';
-import {getColor} from './internal/getColor';
-import {setBackground} from './internal/setBackground';
-import {flexDirection} from './flex/flexDirection';
-import {flexWrap} from './flex/flexWrap';
-import {justifyContent} from './flex/justifyContent';
-import {alignItems} from './flex/alignItems';
-import {alignContent} from './flex/alignContent';
-import {alignSelf} from './flex/alignSelf';
-import {border} from './box/border';
-import {padding} from './box/padding';
-import {margin} from './box/margin';
-import {rounded} from './advance/rounded';
-import {column} from './float/column';
-import {opacity} from './basic/opacity';
-import {position} from './position';
-import {animate} from './animate';
+import { media_container } from './media/media_container';
+import { media } from './media/media';
+import { getColor } from './internal/getColor';
+import { setBackground } from './internal/setBackground';
+import { flexDirection } from './flex/flexDirection';
+import { flexWrap } from './flex/flexWrap';
+import { justifyContent } from './flex/justifyContent';
+import { alignItems } from './flex/alignItems';
+import { alignContent } from './flex/alignContent';
+import { alignSelf } from './flex/alignSelf';
+import { border } from './box/border';
+import { padding } from './box/padding';
+import { margin } from './box/margin';
+import { rounded } from './advance/rounded';
+import { column } from './float/column';
+import { opacity } from './basic/opacity';
+import { position } from './position';
+import { animate } from './animate';
 import wh from './public/wh';
 
 export const Div = styled.div`
@@ -127,9 +127,8 @@ export const Div = styled.div`
     ${props => props['xhp'] && typeof props['xhp'] === 'number' && `max-height:${props['xhp']}%;`}
     ${props => props['nhp'] && typeof props['nhp'] === 'number' && `min-height:${props['nhp']}%;`}
     ${props => props['ns'] && typeof props['ns'] === 'boolean' && `user-select: none;`}
-    ${props =>
-    props['bs'] && typeof props['bs'] === 'object' && `box-shadow:${props['bs'][0]}px ${props['bs'][1]}px ${props['bs'][2]}px rgba(0,0,0,${props['bs'][3]});`} 
-    ${props => props['tr'] && typeof props['tr'] === 'number' && `transform:rotate(${props['tr']}deg);`}   
+    ${props => props['bs'] && typeof props['bs'] === 'object' && `box-shadow:${props['bs'][0]}px ${props['bs'][1]}px ${props['bs'][2]}px rgba(0,0,0,${props['bs'][3]});`} 
+    ${props => (props['tr'] && typeof props['tr'] === 'number') && `transform:rotate(${props['tr']}deg);`}   
     ${props => (props['ch'] || props['cho']) && `
         :hover{color:${getColor(props['ch'] || props['c'], props['cho'], true)};transition: all 0.5s;}
     `} 

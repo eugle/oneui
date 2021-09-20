@@ -1,7 +1,7 @@
 {
   "name": "@eugle/oneui",
   "description": "A simple based on the react and styled-components senior style ui library",
-  "version": "0.3.21",
+  "version": "0.3.26",
   "license": "MIT",
   "scripts": {
     "setup": "yarn install && cd docs && yarn install",

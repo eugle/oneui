@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
         html{scroll-behavior: smooth;}
         body, div, dl, dt, dd, ul, ol, li, pre, form, fieldset, blockquote,i,button, input, label{
-            padding:0;margin:0;list-style-type:none;font:normal 12px "Microsoft YaHei";word-break:break-all;}
+            padding:0;margin:0;list-style-type:none;font:normal 12px "Microsoft YaHei";}
         
         a{text-decoration:none;outline:none;}
         a:link, a:hover, a:active, a:visited{text-decoration:none;}

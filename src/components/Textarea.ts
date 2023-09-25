@@ -12,15 +12,19 @@ import { opacity } from "./basic/opacity";
 import { getButton } from "./internal/getButton";
 import wh from './public/wh';
 
+const desktopMedia = media_container.desktop((p: any) => `font-size:${p.dfs}px;`);
+const tabletMedia = media_container.tablet((p: any) => `font-size:${p.tfs}px;`);
+const phoneMedia = media_container.phone((p: any) => `font-size:${p.pfs}px;`);
+const miniPhone = media_container.miniPhone((p: any) => `font-size:${p.mpfs}px;`);
+
 export const Textarea = styled.textarea<any>`
     ${props => props['br'] && typeof props['br'] === 'number' && `border-radius:${props['br']}px;`}
     ${props => props['a'] && typeof props['a'] === 'boolean' && `width:100%;`}
     ${props => props['fs'] && typeof props['fs'] === 'number' && `font-size:${props['fs']}px;`}
-    ${props => props['dfs'] && media_container.desktop((p: any) => `font-size:${p.dfs}px;`)}
-    ${props => props['tfs'] && media_container.tablet((p: any) => `font-size:${p.tfs}px;`)}
-    ${props => props['pfs'] && media_container.phone((p: any) => `font-size:${p.pfs}px;`)}
-    ${props => props['mpfs'] && media_container.miniPhone((p: any) => `font-size:${p.mpfs}px;`)}
-
+    ${props => props['dfs'] && desktopMedia}
+    ${props => props['tfs'] && tabletMedia}
+    ${props => props['pfs'] && phoneMedia}
+    ${props => props['mpfs'] && miniPhone}
 
 	${props => props['ro'] && `rows:${props['ro']};`}
    

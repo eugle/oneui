@@ -13,7 +13,7 @@ import styledComponents from 'styled-components';
 import pkg from './package.json';
 
 const config = {
-	input: 'src/index.js',
+	input: 'src/index.ts',
 	output: [
 		{ file: pkg.main, format: 'cjs', exports: 'named', sourcemap: false },
 		{ file: pkg.module, format: 'es', exports: 'named', sourcemap: false },
@@ -25,7 +25,11 @@ const config = {
 		svgr(),
 		resolve(),
 		commonjs({
-			namedExports: { react: Object.keys(react), 'react-dom': Object.keys(reactDom) , 'styled-components': Object.keys(styledComponents) },
+			namedExports: {
+				react: Object.keys(react),
+				'react-dom': Object.keys(reactDom),
+				'styled-components': Object.keys(styledComponents),
+			},
 			extensions: ['.js', '.ts', '.jsx', '.tsx'],
 		}),
 	],

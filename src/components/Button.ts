@@ -22,7 +22,7 @@ import { getButton } from "./internal/getButton";
 import { buttonIcon } from "./internal/buttonIcon";
 import wh from './public/wh';
 
-export const Button = styled.button`
+export const Button = styled.button<any>`
 	transition: all 0.5s;
 	:focus {outline:none};
 	:focus {outline:none !important};
@@ -44,27 +44,28 @@ export const Button = styled.button`
     ${props => media(props)}
     ${props => opacity(props)}
 
-    ${props => props["fd"] && flexDirection(props["fd"])}
-    ${props => props["dfd"] && media_container.desktop`${flexDirection(props["dfd"])}`}
-    ${props => props["tfd"] && media_container.tablet`${flexDirection(props["tfd"])}`}
-    ${props => props["pfd"] && media_container.phone`${flexDirection(props["pfd"])}`}
+    ${props => props['fd'] && flexDirection(props['fd'])}
+    ${props => props['dfs'] && media_container.desktop((p: any) => `${flexDirection(p['dfd'])}`)}
+    ${props => props['tfd'] && media_container.tablet((p: any) => `${flexDirection(p['tfd'])}`)}
+    ${props => props['pfd'] && media_container.phone((p: any) => `${flexDirection(p['pfd'])}`)}
      
-    ${props => props["fw"] && flexWrap(props["fw"])}
-    ${props => props["dfw"] && media_container.desktop`${flexWrap(props["dfw"])}`}
-    ${props => props["tfw"] && media_container.tablet`${flexWrap(props["tfw"])}`}
-    ${props => props["pfw"] && media_container.phone`${flexWrap(props["pfw"])}`}
+    ${props => props['fw'] && flexWrap(props['fw'])}
+    ${props => props['dfw'] && media_container.desktop((p: any) => `${flexWrap(p['dfw'])}`)}
+    ${props => props['tfw'] && media_container.tablet((p: any) => `${flexWrap(p['tfw'])}`)}
+    ${props => props['pfw'] && media_container.phone((p: any) => `${flexWrap(p['pfw'])}`)}
     
-    ${props => props["jc"] && justifyContent(props["jc"])}
-    ${props => props["djc"] && media_container.desktop`${justifyContent(props["djc"])}`}
-    ${props => props["tjc"] && media_container.tablet`${justifyContent(props["tjc"])}`}
-    ${props => props["pjc"] && media_container.phone`${justifyContent(props["pjc"])}`}
+    ${props => props['jc'] && justifyContent(props['jc'])}
+    ${props => props['djc'] && media_container.desktop((p: any) => `${justifyContent(p['djc'])}`)}
+    ${props => props['tjc'] && media_container.tablet((p: any) => `${justifyContent(p['tjc'])}`)}
+    ${props => props['pjc'] && media_container.phone((p: any) => `${justifyContent(p['pjc'])}`)}
     
-    ${props => props["ai"] && alignItems(props["ai"])}
-    ${props => props["dai"] && media_container.desktop`${alignItems(props["dai"])}`}
-    ${props => props["tai"] && media_container.tablet`${alignItems(props["tai"])}`}
-    ${props => props["pai"] && media_container.phone`${alignItems(props["pai"])}`}
-    ${props => props["ac"] && alignContent(props["ac"])}
-    ${props => props["as"] && alignSelf(props["as"])}
+    ${props => props['ai'] && alignItems(props['ai'])}
+    ${props => props['dai'] && media_container.desktop((d: any) => `${alignItems(d['dai'])}`)}
+    ${props => props['tai'] && media_container.tablet((t: any) => `${alignItems(t['tai'])}`)}
+    ${props => props['pai'] && media_container.phone((p: any) => `${alignItems(p['pai'])}`)}
+    ${props => props['ac'] && alignContent(props['ac'])}
+    ${props => props['as'] && alignSelf(props['as'])}
+
     ${props => props["f"] && typeof props["f"] === "number" && `flex:${props["f"]};`}
     ${props => props["df"] && media_container.desktop`${flexDirection(props["df"])}`}
     ${props => props["tf"] && media_container.tablet`${flexDirection(props["tf"])}`}

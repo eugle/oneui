@@ -14,25 +14,27 @@ import wh from './public/wh';
 
 export const Img = styled.img`
     object-fit:cover;
-    ${props => props['xw'] && typeof props['xw'] === 'number' && `max-width:${props['xw']}px;`}
-    ${props => props['nw'] && typeof props['nw'] === 'number' && `min-width:${props['nw']}px;`}
+    ${(props: any) => props['xw'] && typeof props['xw'] === 'number' && `max-width:${props['xw']}px;`}
+    ${(props: any) => props['nw'] && typeof props['nw'] === 'number' && `min-width:${props['nw']}px;`}
 
-    ${props => props['xwp'] && typeof props['xwp'] === 'number' && `max-width:${props['xwp']}%;`}
-    ${props => props['nwp'] && typeof props['nwp'] === 'number' && `min-width:${props['nwp']}%;`}
+    ${(props: any) => props['xwp'] && typeof props['xwp'] === 'number' && `max-width:${props['xwp']}%;`}
+    ${(props: any) => props['nwp'] && typeof props['nwp'] === 'number' && `min-width:${props['nwp']}%;`}
 
-     ${props => props['xh'] && typeof props['xh'] === 'number' && `max-height:${props['xh']}px;`}
-    ${props => props['nh'] && typeof props['nh'] === 'number' && `min-height:${props['nh']}px;`}
+    ${(props: any) => props['xh'] && typeof props['xh'] === 'number' && `max-height:${props['xh']}px;`}
+    ${(props: any) => props['nh'] && typeof props['nh'] === 'number' && `min-height:${props['nh']}px;`}
 
-    ${props => props['xhp'] && typeof props['xhp'] === 'number' && `max-height:${props['xhp']}%;`}
-    ${props => props['nhp'] && typeof props['nhp'] === 'number' && `min-height:${props['nhp']}%;`}
+    ${(props: any) => props['xhp'] && typeof props['xhp'] === 'number' && `max-height:${props['xhp']}%;`}
+    ${(props: any) => props['nhp'] && typeof props['nhp'] === 'number' && `min-height:${props['nhp']}%;`}
 
-    ${props => props['w'] && typeof props['w'] === 'number' && `width:${props['w']}px;`}
-    ${props => props['dw'] && media_container.desktop`${`width:${props['dw']}px;`}`}
-    ${props => props['tw'] && media_container.tablet`${`width:${props['tw']}px;`}`}
-    ${props => props['pw'] && media_container.phone`${`width:${props['pw']}px;`}`}
+    ${(props: any) => props['w'] && typeof props['w'] === 'number' && `width:${props['w']}px;`}
+    ${(props: any) => props['dw'] && media_container.desktop((d: any) => `width:${d['dw']}px;`)}
+    ${(props: any) => props['tw'] && media_container.tablet((t: any) => `width:${t['tw']}px;`)}
+    ${(props: any) => props['pw'] && media_container.phone((p: any) => `width:${p['pw']}px;`)}
 
-    ${props => props['br'] && typeof props['br'] === 'number' && `border-radius:${props['br']}px;`};
-    ${props =>
+
+
+    ${(props: any) => props['br'] && typeof props['br'] === 'number' && `border-radius:${props['br']}px;`};
+    ${(props: any) =>
         props['bs'] &&
         typeof props['bs'] === 'object' &&
         `box-shadow:${props['bs'][0]}px ${props['bs'][1]}px ${props['bs'][2]}px rgba(0,0,0,${props['bs'][3]});`} 

@@ -16,7 +16,7 @@ export const GlobalColor = ({
     info,
     infoRGB,
     infoG,
-} = {}) => {
+}: any) => {
     if (primary) {
         Color.primary = primary;
     }

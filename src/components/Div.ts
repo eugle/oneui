@@ -32,7 +32,9 @@ import { position } from './position';
 import { animate } from './animate';
 import wh from './public/wh';
 
-export const Div = styled.div`
+const desktopMedia = media_container.desktop((p: any) => `${flexDirection(p['dfd'])}`);
+
+export const Div = styled.div<any>`
     ${props => wh(props)}
     ${props => border(props)}
     ${props => rounded(props)}
@@ -44,49 +46,50 @@ export const Div = styled.div`
     ${props => animate(props)}
     
     ${props => props['fd'] && flexDirection(props['fd'])}
-    ${props => props['dfd'] && media_container.desktop`${flexDirection(props['dfd'])}`}
-    ${props => props['tfd'] && media_container.tablet`${flexDirection(props['tfd'])}`}
-    ${props => props['pfd'] && media_container.phone`${flexDirection(props['pfd'])}`}
+    ${props => props['dfs'] && desktopMedia}
+    ${props => props['tfd'] && media_container.tablet((p: any) => `${flexDirection(p['tfd'])}`)}
+    ${props => props['pfd'] && media_container.phone((p: any) => `${flexDirection(p['pfd'])}`)}
      
     ${props => props['fw'] && flexWrap(props['fw'])}
-    ${props => props['dfw'] && media_container.desktop`${flexWrap(props['dfw'])}`}
-    ${props => props['tfw'] && media_container.tablet`${flexWrap(props['tfw'])}`}
-    ${props => props['pfw'] && media_container.phone`${flexWrap(props['pfw'])}`}
+    ${props => props['dfw'] && media_container.desktop((p: any) => `${flexWrap(p['dfw'])}`)}
+    ${props => props['tfw'] && media_container.tablet((p: any) => `${flexWrap(p['tfw'])}`)}
+    ${props => props['pfw'] && media_container.phone((p: any) => `${flexWrap(p['pfw'])}`)}
     
     ${props => props['jc'] && justifyContent(props['jc'])}
-    ${props => props['djc'] && media_container.desktop`${justifyContent(props['djc'])}`}
-    ${props => props['tjc'] && media_container.tablet`${justifyContent(props['tjc'])}`}
-    ${props => props['pjc'] && media_container.phone`${justifyContent(props['pjc'])}`}
+    ${props => props['djc'] && media_container.desktop((p: any) => `${justifyContent(p['djc'])}`)}
+    ${props => props['tjc'] && media_container.tablet((p: any) => `${justifyContent(p['tjc'])}`)}
+    ${props => props['pjc'] && media_container.phone((p: any) => `${justifyContent(p['pjc'])}`)}
+
     
     ${props => props['ai'] && alignItems(props['ai'])}
-    ${props => props['dai'] && media_container.desktop`${alignItems(props['dai'])}`}
-    ${props => props['tai'] && media_container.tablet`${alignItems(props['tai'])}`}
-    ${props => props['pai'] && media_container.phone`${alignItems(props['pai'])}`}
-    
+    ${props => props['dai'] && media_container.desktop((d: any) => `${alignItems(d['dai'])}`)}
+    ${props => props['tai'] && media_container.tablet((t: any) => `${alignItems(t['tai'])}`)}
+    ${props => props['pai'] && media_container.phone((p: any) => `${alignItems(p['pai'])}`)}
     ${props => props['ac'] && alignContent(props['ac'])}
     ${props => props['as'] && alignSelf(props['as'])}
     
     ${props => props['f'] && typeof props['f'] === 'number' && `flex:${props['f']};`}
-    ${props => props['df'] && media_container.desktop`${flexDirection(props['df'])}`}
-    ${props => props['tf'] && media_container.tablet`${flexDirection(props['tf'])}`}
-    ${props => props['pf'] && media_container.phone`${flexDirection(props['pf'])}`}
-    
+    ${props => props['df'] && media_container.desktop((d: any) => `${flexDirection(d['df'])}`)}
+    ${props => props['tf'] && media_container.tablet((t: any) => `${flexDirection(t['tf'])}`)}
+    ${props => props['pf'] && media_container.phone((p: any) => `${flexDirection(p['pf'])}`)}
     ${props => props['_o'] && typeof props['_o'] === 'number' && `order:${props['_o']};`}
-    ${props => props['_do'] && media_container.desktop`${`order:${props['_do']};`}`}
-    ${props => props['_to'] && media_container.tablet`${`order:${props['_to']};`}`}
-    ${props => props['_po'] && media_container.phone`${`order:${props['_po']};`}`}
+   
+    ${props =>
+        props['bg'] && (typeof props['bg'] === 'string' && props['g'])
+            ? setBackground(props['bg'], props['g'])
+            : `background:${getColor(props['bg'], props['bgo'])};`}
+    ${props => props['br'] && typeof props['br'] === 'number' && `border-radius:${props['br']}px;`}
 
-    ${props => props['c'] && `color:${getColor(props['c'], props['o'])};`}
+    ${props => props['c'] && typeof props['c'] === 'string' && `color:${getColor(props['c'], props['o'])};`}
     ${props => props['fs'] && typeof props['fs'] === 'number' && `font-size:${props['fs']}px;`}
-    ${props => props['dfs'] && media_container.desktop`${`font-size:${props['dfs']}px;`}`}
-    ${props => props['tfs'] && media_container.tablet`${`font-size:${props['tfs']}px;`}`}
-    ${props => props['pfs'] && media_container.phone`${`font-size:${props['pfs']}px;`}`}
-    ${props => props['mpfs'] && media_container.miniPhone`${`font-size:${props['mpfs']}px;`}`}
-    
+    ${props => props['dfs'] && media_container.desktop((d: any) => `font-size:${d['dfs']}px;`)}
+    ${props => props['tfs'] && media_container.tablet((t: any) => `font-size:${t['tfs']}px;`)}
+    ${props => props['pfs'] && media_container.phone((p: any) => `font-size:${p['pfs']}px;`)}
+   
     ${props => props['lh'] && typeof props['lh'] === 'number' && `line-height:${props['lh']}px;`}
-    ${props => props['dlh'] && media_container.desktop`${`line-height:${props['dlh']}px;`}`}
-    ${props => props['tlh'] && media_container.tablet`${`line-height:${props['tlh']}px;`}`}
-    ${props => props['plh'] && media_container.phone`${`line-height:${props['plh']}px;`}`}
+    ${props => props['dlh'] && media_container.desktop((d: any) => `line-height:${d['dlh']}px;`)}
+    ${props => props['tlh'] && media_container.tablet((t: any) => `line-height:${t['tlh']}px;`)}
+    ${props => props['plh'] && media_container.phone((p: any) => `line-height:${p['plh']}px;`)}
     
     ${props => props['l'] && typeof props['l'] === 'boolean' && `font-weight:300;`}
     ${props => props['b'] && typeof props['b'] === 'boolean' && `font-weight:600;`}
